@@ -11,10 +11,10 @@ Source0:	http://pear.phpmd.org/get/%{pearname}-%{version}.tgz
 # Source0-md5:	9b3ffd8cca7882d62d37bea4c773b9a2
 URL:		http://pear.phpmd.org/package/PHP_PMD/
 BuildRequires:	php-channel(pear.phpmd.org)
-BuildRequires:	php-packagexml2cl
 BuildRequires:	php-pear-PEAR >= 1:1.6.0
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.610
+Requires:	php(core) >= 5.2.3
 Requires:	php(dom)
 Requires:	php(pcre)
 Requires:	php(simplexml)
@@ -37,9 +37,7 @@ In PEAR status of this package is: %{status}.
 
 %prep
 %pear_package_setup
-
-%build
-packagexml2cl package.xml > ChangeLog
+mv docs/PHP_PMD/* .
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -52,8 +50,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog install.log
-%doc docs/PHP_PMD/*
+%doc CHANGELOG LICENSE install.log
 %{php_pear_dir}/.registry/.channel.*/*.reg
 %attr(755,root,root) %{_bindir}/phpmd
 %{php_pear_dir}/PHP/PMD.php
