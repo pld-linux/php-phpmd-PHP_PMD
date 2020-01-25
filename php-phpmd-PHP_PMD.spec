@@ -1,6 +1,5 @@
 %define		status		stable
 %define		pearname	PHP_PMD
-%include	/usr/lib/rpm/macros.php
 Summary:	PHP Mess Detector
 Name:		php-phpmd-PHP_PMD
 Version:	1.5.0
