@@ -3,7 +3,7 @@
 Summary:	PHP Mess Detector
 Name:		php-phpmd-PHP_PMD
 Version:	1.5.0
-Release:	1
+Release:	2
 License:	BSD License
 Group:		Development/Languages/PHP
 Source0:	http://pear.phpmd.org/get/%{pearname}-%{version}.tgz
